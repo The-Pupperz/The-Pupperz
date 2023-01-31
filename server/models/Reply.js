@@ -11,7 +11,7 @@ const replySchema = new Schema(
             required: true,
             maxLength: 280
         },
-        username: {
+        name: {
             type: String,
             required: true,
         },
@@ -23,5 +23,6 @@ const replySchema = new Schema(
         id: false
     }
 );
+
 
 module.exports = replySchema;

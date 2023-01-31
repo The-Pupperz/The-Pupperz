@@ -2,17 +2,20 @@ const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const userSchema = new Schema({
-  username: {
+  name: {
     type: String,
     required: true,
     trim: true,
   },
+  // userId: {
+  //   type: Schema.Types.ObjectId,
+  //   default: () => new Types.ObjectId()
+  // },
   email: {
     type: String,
     required: true,
     unique: true,
-    match: [/^([a-z0-9_.-]+)@([da-z.-]+).([a-z.]{2,20})$/
-    , "Must match an email address!"],
+    match: [/.+@.+\..+/, "Must match an email address!"],
   },
   password: {
     type: String,
@@ -22,7 +25,7 @@ const userSchema = new Schema({
   userBio: {
     type: String,
     maxlength: 280
-  }
+  },
   posts: [
     {
       type: Schema.Types.ObjectId,

@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, Types } = require("mongoose");
 const replySchema = require('./Reply');
 const moment = require('moment');
 
@@ -16,18 +16,22 @@ const postSchema = new Schema(
             default: moment().format('MMMM Do YYYY, h:mm:ss a')
 
         },
-        username: {
+        postId: {
+            type: Schema.Types.ObjectId,
+            default: () => new Types.ObjectId()
+        },
+        name: {
             type: String,
             required: true
         },
         replies: [replySchema]
     },
-    {
-        toJSON: {
-            getters
-        },
-        id: false
-    }
+    // {
+    //     toJSON: {
+    //         // getters
+    //     },
+    //     id: false
+    // }
 );
 
 const Post = model('Post', postSchema);
