@@ -1,11 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import Nav from './components/Nav';
+import Landing from './components/Landing';
+import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
   return (
-<h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div className=' w-full h-screen bg-[#040F16]'>
+      <Nav />
+      <Landing />
+    </div>
+
   );
 }
 
