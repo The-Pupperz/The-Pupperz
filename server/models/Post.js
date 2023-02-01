@@ -16,10 +16,6 @@ const postSchema = new Schema(
             default: moment().format('MMMM Do YYYY, h:mm:ss a')
 
         },
-        postId: {
-            type: Schema.Types.ObjectId,
-            default: () => new Types.ObjectId()
-        },
         name: {
             type: String,
             required: true

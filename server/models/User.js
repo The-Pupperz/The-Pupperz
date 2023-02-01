@@ -7,10 +7,6 @@ const userSchema = new Schema({
     required: true,
     trim: true,
   },
-  // userId: {
-  //   type: Schema.Types.ObjectId,
-  //   default: () => new Types.ObjectId()
-  // },
   email: {
     type: String,
     required: true,
@@ -42,7 +38,8 @@ const userSchema = new Schema({
 {
   toJSON: {
       virtuals: true,
-  }
+  },
+  id: false
 });
 
 userSchema.pre("save", async function (next) {
