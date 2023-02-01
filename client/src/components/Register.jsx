@@ -31,7 +31,7 @@ const Register = () => {
                     <div class="flex items-center justify-center">
                     <button
                         type="submit"
-                        class=" bg-[#A288E3] hover:bg-[#F79764] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button"
+                        class=" bg-[#A288E3] hover:bg-[#F79764] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     >Create Account</button>
                     </div>
 
