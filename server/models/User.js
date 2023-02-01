@@ -38,6 +38,11 @@ const userSchema = new Schema({
       ref: 'User'
     }
   ],
+},
+{
+  toJSON: {
+      virtuals: true,
+  }
 });
 
 userSchema.pre("save", async function (next) {
@@ -52,4 +57,10 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-module.exports = model("User", userSchema);
+userSchema.virtual('friendCount').get(function() {
+  return this.friends.length;
+});
+
+const User = model("User", userSchema);
+
+module.exports = User;

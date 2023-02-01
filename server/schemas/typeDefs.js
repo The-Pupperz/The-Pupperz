@@ -41,11 +41,13 @@ const typeDefs = gql`
     register(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     createPost(postBody: String!, name: String!): Post 
-    addReply(replyBody: String!, name: String!, postId: ID!): Reply
+    addReply(replyBody: String!, name: String!, postId: ID!): Post
     updatePost(postBody: String!, postId: ID!, name: String!): Post
     updateReply(postId: ID!, replyBody: String!, replyId: ID!, name: String!): Reply
     removePost(postId: ID!): Post
-    removeReply(replyId: ID!): Reply
+    removeReply(replyId: ID!): Post
+    addFriend(friendId: ID!): User
+    removeFriend(friendId: ID!): User
   }
 `;
 

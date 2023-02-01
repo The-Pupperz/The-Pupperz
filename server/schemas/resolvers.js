@@ -48,7 +48,8 @@ const resolvers = {
         { $push: { replies: { replyBody, name } } },
         { new: true, runValidators: true}
       );
-      return reply;
+      console.log(reply.replies);
+      return reply.replies;
     },
     updatePost: async (parent, { postBody, postId, name }) => {
       const post = await Post.findOneAndUpdate(
@@ -59,9 +60,9 @@ const resolvers = {
       console.log(post);
       return post;
     },
-    updateReply: async (parent, { postId, replyBody, replyId, name }) => {
+    updateReply: async (parent, { replyBody, replyId, name }) => {
       const reply = await Reply.findOneAndUpdate(
-        { _id: replyId },
+        { replyId : replyId },
         { replyBody, name },
         { new: true }
       );
@@ -74,13 +75,18 @@ const resolvers = {
       return remove;
     },
     removeReply: async (parent, { replyId }) => {
-      const remove = await Reply.findOneAndUpdate(
-        { _id: replyId },
-        { $set: { replyBody: "This reply has been removed." } },
-        { new: true }
+      const remove = await Post.findOneAndDelete(
+        { replyId: replyId }
       );
       return remove;
     },
+    // addFriend: async (parent, { friendId }) => {
+    //   const friend = await User.findOneAndUpdate(
+    //     { userId: friendId },
+    //     { $push: { friends: { friendId } } },
+    //     { new: true, runValidators: true }
+    //   );
+    //   return friend;
   },
 };
 
