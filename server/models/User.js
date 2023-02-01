@@ -42,7 +42,8 @@ const userSchema = new Schema({
 {
   toJSON: {
       virtuals: true,
-  }
+  },
+  id: false,
 });
 
 userSchema.pre("save", async function (next) {

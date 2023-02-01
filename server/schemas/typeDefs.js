@@ -17,7 +17,7 @@ const typeDefs = gql`
   }
 
   type Post {
-    postId: ID!
+    _id: ID!
     postBody: String!
     createdAt: String
     name: String!
@@ -25,7 +25,7 @@ const typeDefs = gql`
   }
 
   type Reply {
-    replyId: ID!
+    _id: ID!
     replyBody: String!
     name: String!
   }
@@ -33,7 +33,7 @@ const typeDefs = gql`
   type Query {
     me: User
     getPosts: [Post]
-    getPost(postId: ID!): Post
+    getPost(_id: ID!): Post
 
   }
 
@@ -41,13 +41,13 @@ const typeDefs = gql`
     register(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     createPost(postBody: String!, name: String!): Post 
-    addReply(replyBody: String!, name: String!, postId: ID!): Post
-    updatePost(postBody: String!, postId: ID!, name: String!): Post
-    updateReply(postId: ID!, replyBody: String!, replyId: ID!, name: String!): Reply
-    removePost(postId: ID!): Post
-    removeReply(replyId: ID!): Post
-    addFriend(friendId: ID!): User
-    removeFriend(friendId: ID!): User
+    addReply(replyBody: String!, name: String!, _id: ID!): Post
+    updatePost(postBody: String!, _id: ID!, name: String!): Post
+    updateReply(replyBody: String!, _id: ID!, name: String!): Reply
+    removePost(_id: ID!): Post
+    removeReply(_id: ID!): Post
+    addFriend(_id: ID!): User
+    removeFriend(_id: ID!): User
   }
 `;
 

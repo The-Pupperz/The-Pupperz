@@ -1,5 +1,6 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Post, Reply } = require("../models");
+const { User, Post } = require("../models");
+// const { post } = require("../models/Reply");
 const { signToken } = require("../utils/auth.js");
 
 const resolvers = {
@@ -10,10 +11,13 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-    getPost: async (parent, { postId }) => {
-      const post = await Post.findOne({ postId: postId });
+    getPost: async (parent, { _id }) => {
+      const post = await Post.findOne({ _id: _id });
       console.log(post);
       return post;
+    },
+    getPosts: async () => {
+      return Post.find();
     },
   },
   Mutation: {
@@ -42,51 +46,55 @@ const resolvers = {
       const post = await Post.create({ postBody, name });
       return post;
     },
-    addReply: async (parent, { replyBody, name, postId }) => {
-      const reply = await Post.findOneAndUpdate(
-        { postId: postId },
-        { $push: { replies: { replyBody, name } } },
+    addReply: async (parent, { replyBody, name, _id }) => {
+      const updatedPost = await Post.findOneAndUpdate(
+        { _id: _id },
+        { $addToSet: { replies: { replyBody, name } } },
         { new: true, runValidators: true}
       );
-      console.log(reply.replies);
-      return reply.replies;
+      console.log(updatedPost);
+      return updatedPost;
     },
-    updatePost: async (parent, { postBody, postId, name }) => {
+    updatePost: async (parent, { postBody, _id, name }) => {
       const post = await Post.findOneAndUpdate(
-        { postId: postId },
+        { _id: _id },
         { postBody, name },
         { new: true }
       );
       console.log(post);
       return post;
     },
-    updateReply: async (parent, { replyBody, replyId, name }) => {
-      const reply = await Reply.findOneAndUpdate(
-        { replyId : replyId },
+    updateReply: async (parent, { replyBody, _id, name }) => {
+      const updatedReply = await Post.findOneAndUpdate(
+        { _id : _id },
         { replyBody, name },
         { new: true }
       );
-      return reply;
+      console.log(updatedReply);
+      return updatedReply;
     },
-    removePost: async (parent, { postId }) => {
+    removePost: async (parent, { _id }) => {
       const remove = await Post.findOneAndDelete(
-        { postId: postId },
+        { _id: _id },
       );
       return remove;
     },
-    removeReply: async (parent, { replyId }) => {
-      const remove = await Post.findOneAndDelete(
-        { replyId: replyId }
+    removeReply: async (parent, { replyId }, { post }) => {
+      const remove = await Post.findOneAndUpdate(
+        { _id: post._id },
+        { $pull: { replies: { _id: replyId } } },
+        { new: true }
       );
       return remove;
     },
-    // addFriend: async (parent, { friendId }) => {
-    //   const friend = await User.findOneAndUpdate(
-    //     { userId: friendId },
-    //     { $push: { friends: { friendId } } },
-    //     { new: true, runValidators: true }
-    //   );
-    //   return friend;
+    addFriend: async (parent, { _id }) => {
+      const updatedUser = await User.findOneAndUpdate(
+        { _id: _id },
+        { $addToSet: { friends: _id } },
+        { new: true, runValidators: true }
+      );
+      return updatedUser;
+    },
   },
 };
 
