@@ -1,45 +1,25 @@
 {
-  "short_name": "Pup",
-  "name": "Puppers",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
-      "src":"./assets/puppers(lg).png",
-      "size":"512X512",
-      "type":"image/png"
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
     },
     {
-      "src":"./assets/puppers(lg).png",
-      "size":"192X192",
-      "type":"image/png"
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
     },
     {
-      "src":"./assets/puppers(lg).png",
-      "size":"144X144",
-      "type":"image/png"
-    },
-    {
-      "src":"./assets/puppers(lg).png",
-      "size":"128X128",
-      "type":"image/png"
-    },
-    {
-      "src":"./assets/puppers(sml).png",
-      "size":"96X96",
-      "type":"image/png"
-    },
-    {
-      "src":"./assets/puppers(sml).png",
-      "size":"72X72",
-      "type":"image/png"
-    },
-    {
-      "src":"./assets/puppers(sml).png",
-      "size":"48X48",
-      "type":"image/png"
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
-  "start_url": "/", 
+  "start_url": ".",
   "display": "standalone",
-  "theme_color": "#A288E3 ",
-  "background_color": "#F79764"
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }
