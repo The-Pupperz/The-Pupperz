@@ -1,4 +1,6 @@
 import React from 'react'
+import { IoIosHelpCircleOutline } from 'react-icons/io'; 
+
 
 const Support = () => {
     return (
@@ -6,8 +8,7 @@ const Support = () => {
   <div class="mx-auto w-full max-w-[550px]">
   <div class="mb-5 text-4xl text-center text-[#F79764]">
             <label>
-    
-              Account Settings
+              Get Support
             </label>
             
             </div> 
@@ -75,9 +76,9 @@ const Support = () => {
       </div>
       <div class="flex items-center py-5 justify-center">
         <button
-          class="hover:shadow-form rounded-md bg-[#A288E3] hover:bg-[#F79764] px-8 text-base font-semibold text-white outline-none py-3"
+          class="hover:shadow-form rounded-md flex space-between bg-[#A288E3] hover:bg-[#F79764] px-8 text-base font-semibold text-white outline-none py-3"
         >
-          Get Support
+          <span class= "p-1"><IoIosHelpCircleOutline/> </span> Support
         </button>
       </div>
     </form>
