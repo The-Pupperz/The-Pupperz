@@ -22,6 +22,7 @@ const typeDefs = gql`
     createdAt: String
     name: String!
     replies: [Reply]
+    
   }
 
   type Reply {
@@ -34,6 +35,8 @@ const typeDefs = gql`
     me: User
     getPosts: [Post]
     getPost(_id: ID!): Post
+    getUserPosts(_id: ID!): [Post]
+    getReplies(_id: ID!): [Reply]
 
   }
 
@@ -41,11 +44,11 @@ const typeDefs = gql`
     register(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     createPost(postBody: String!, name: String!): Post 
-    addReply(replyBody: String!, name: String!, _id: ID!): Post
+    addReply(replyBody: String!, name: String!, _id: ID!): Reply
     updatePost(postBody: String!, _id: ID!, name: String!): Post
     updateReply(replyBody: String!, _id: ID!, name: String!): Reply
     removePost(_id: ID!): Post
-    removeReply(_id: ID!): Post
+    removeReply(_id: ID!): Reply
     addFriend(_id: ID!): User
     removeFriend(_id: ID!): User
   }

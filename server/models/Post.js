@@ -1,10 +1,11 @@
-const { Schema, model, Types } = require("mongoose");
-const replySchema = require('./Reply');
+const { Schema, model } = require("mongoose");
+const Reply = require('./Reply');
 const moment = require('moment');
 
 
 const postSchema = new Schema(
     {
+        
         postBody: {
             type: String,
             required: true,
@@ -20,7 +21,13 @@ const postSchema = new Schema(
             type: String,
             required: true
         },
-        replies: [replySchema]
+        replies: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Reply'
+            }
+        ]
+        
     },
     // {
     //     toJSON: {
