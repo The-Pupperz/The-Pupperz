@@ -2,8 +2,10 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
+import Settings from './Settings.jsx';
+
 const navigation = [
-  { name: 'Home', href: '#', current: true },
+  { name: 'Puppers Home', href: '#', current: true },
 
 ]
 
@@ -30,17 +32,16 @@ export default function Example() {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                {/* ---------------------------------------------------------------------------------------------------- REPLACE ICON-------------------------------------------------- */}
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="block h-8 w-auto lg:hidden"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
+                    src={require("../assets/Puppers_2.png")}
+                    alt="Puppers Logo"
                   />
                   <img
                     className="hidden h-8 w-auto lg:block"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
+                    src={require("../assets/Puppers_2.png")}
+                    alt="Puppers Logo"
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
@@ -50,8 +51,8 @@ export default function Example() {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-white hover:bg-[#040F16] hover:text-white',
-                          'px-3 py-2 rounded-md text-sm font-medium'
+                          item.current ? 'border-double border-2 border-[#F79764] text-[#F79764]' : '',
+                          'px-3 py-2 rounded-md text-big font-bold hover:text-lg'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
@@ -70,8 +71,9 @@ export default function Example() {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                      //  TODO: edit to confirm finished ask TA for help tomorrow 
+                        src=""
+                        alt="user profile icon"
                       />
                     </Menu.Button>
                   </div>
@@ -84,32 +86,34 @@ export default function Example() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-[#F79764] py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
                           <a
                             href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                            className={classNames(active ? 'bg-[#F79764]' : '', 'hover:bg-[#A288E3] block px-4 py-2 text-md text-white')}
                           >
-                            Your Profile
+                            Profile
                           </a>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                        <link to="/ettings"> 
+                          <a 
+                          className={classNames(active ? 'bg-[#F79764]': '', 'hover:bg-[#A288E3] block px-4 py-2 text-md text-white')}
                           >
                             Settings
+      
                           </a>
+                          </link>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
                           <a
                             href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                            className={classNames(active ? 'bg-gray-100' : '', 'hover:bg-[#A288E3]  block px-4 py-2 text-md text-white')}
                           >
                             Sign out
                           </a>

@@ -9,6 +9,8 @@ function App() {
   return (
     <div className=' w-full h-screen bg-[#040F16]'>
       <Nav />
+      
+      <Support />
       <Settings/>
       <Footer/>
 
