@@ -59,7 +59,7 @@ const Settings = () => {
           <div class="mb-5">
             <label
               for="email"
-              class="py-3 mb-3 block text-base font-medium text-white"
+              class="py-3 mb-3 block text-base font-medium text-[#F79764]"
             >
               Email
             </label>
@@ -76,7 +76,7 @@ const Settings = () => {
           <div class="mb-5">
             <label
               for="bio"
-              class="py-3 mb-3 block text-base font-medium text-white"
+              class="py-3 mb-3 block text-base font-medium text-[#F79764]"
             >
               Bio
             </label>
@@ -92,7 +92,7 @@ const Settings = () => {
       </div>
 
       <div class="mb-5">
-        <label class="mb-3 block text-base font-medium text-white">
+        <label class="mb-3 block text-base font-medium text-[#F79764]">
           Darkmode | Lightmode
         </label>
         <div class="flex items-center space-x-6">
@@ -105,7 +105,7 @@ const Settings = () => {
             />
             <label
               for="radioButton1"
-              class="pl-3 text-base font-medium text-white"
+              class="pl-3 text-base font-medium text-[#F79764]"
             >
               Darkmode
             </label>
@@ -119,7 +119,7 @@ const Settings = () => {
             />
             <label
               for="radioButton2"
-              class="pl-3 text-base font-medium text-white"
+              class="pl-3 text-base font-medium text-[#F79764]"
             >
               Lightmode
             </label>
@@ -127,7 +127,7 @@ const Settings = () => {
         </div>
       </div>
 
-      <div>
+      <div class="flex items-center justify-center py-5">
         <button
           class="hover:shadow-form rounded-md  bg-[#A288E3] hover:bg-[#F79764] py-3 px-8 text-center text-base font-semibold text-white outline-none"
         >
