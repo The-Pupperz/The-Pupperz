@@ -129,7 +129,7 @@ const Settings = () => {
 
       <div class="flex items-center justify-center py-5">
         <button
-          class="hover:shadow-form rounded-md  bg-[#A288E3] hover:bg-[#F79764] py-3 px-8 text-center text-base font-semibold text-white outline-none"
+          class="hover:shadow-form rounded-md  bg-[#A288E3] hover:bg-[#F79764] py-3 px-8 text-center text-base font-semibold text-white outline-none font-Comfortaa"
         >
           Update Settings
         </button>
