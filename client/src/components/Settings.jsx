@@ -7,7 +7,7 @@ const Settings = () => {
   <div class="mx-auto w-full max-w-[550px]">
  
         <div class="w-full sm:w-1/2">
-          <div class="mb-5 text-4xl text-white">
+          <div class="mb-5 text-4xl text-[#F79764]">
             <label class="">
     
               Account Settings
@@ -21,7 +21,7 @@ const Settings = () => {
           <div class="mb-5">
             <label
               for="fName"
-              class="py-3 mb-3 block text-base font-medium text-white"
+              class="py-3 mb-3 block text-base font-medium text-[#F79764]"
             >
               Username
             </label>
@@ -30,7 +30,7 @@ const Settings = () => {
               name="username"
               id="username"
               placeholder="username"
-              class="hover:placeholder-white hover:bg-[#A288E3] w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              class="hover:placeholder-white hover:bg-[#A288E3] w-full rounded-md border border-[#F79764] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             />
           </div>
         </div>
@@ -38,7 +38,7 @@ const Settings = () => {
           <div class="mb-5">
             <label
               for="username"
-              class="py-3 mb-3 block text-base font-medium text-white"
+              class="py-3 mb-3 block text-base font-medium text-[#F79764]"
             >
               Password
             </label>
