@@ -47,7 +47,7 @@ const Settings = () => {
               name="password"
               id="password"
               placeholder="password"
-              class="hover:placeholder-white hover:bg-[#A288E3] w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              class="hover:placeholder-white hover:bg-[#A288E3] w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium  text-[#F79764] outline-none focus:border-[#6A64F1] focus:shadow-md"
             />
           </div>
         </div>
@@ -68,7 +68,7 @@ const Settings = () => {
               name="email"
               id="userEmail"
               placeholder="email"
-              class="hover:placeholder-white hover:bg-[#A288E3] w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              class="hover:placeholder-white hover:bg-[#A288E3] w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium  text-[#F79764] outline-none focus:border-[#6A64F1] focus:shadow-md"
             />
           </div>
         </div>
@@ -129,7 +129,7 @@ const Settings = () => {
 
       <div>
         <button
-          class="hover:shadow-form rounded-md bg-[#A288E3] hover:bg-[#F79764] py-3 px-8 text-center text-base font-semibold text-white outline-none"
+          class="hover:shadow-form rounded-md  bg-[#A288E3] hover:bg-[#F79764] py-3 px-8 text-center text-base font-semibold text-white outline-none"
         >
           Update Settings
         </button>
