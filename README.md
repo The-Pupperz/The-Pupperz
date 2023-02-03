@@ -6,8 +6,8 @@
 - [Description](#description)
 - [Technology](#technology)
 - [Installation](#installation)
-- [Screenshots](#screenshots)
 - [Deployed Application](#deployedapplication)
+- [Screenshots](#screenshots)
 - [Usage](#usage)
 - [Contribution](#contribution)
 
@@ -36,7 +36,7 @@
 
 ```
 
-💾 Install application locally by running 'npm install' or 'npm i'.
+💾 Install application locally by running `npm install` or `npm i`. 
 
 ```
 
