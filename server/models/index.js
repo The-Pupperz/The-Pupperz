@@ -1,5 +1,5 @@
 module.exports = {
   User: require("./User.js"),
   Post: require("./Post.js"),
-  // Reply: require("./Reply.js"),
+  Reply: require("./Reply.js"),
 };

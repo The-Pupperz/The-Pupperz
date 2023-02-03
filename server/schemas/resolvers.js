@@ -19,6 +19,15 @@ const resolvers = {
       const posts = await Post.find({});
       return posts;
     },
+    getUserPosts: async (parent, { _id }) => {
+      const user =  await User.findById(_id).populate('posts');
+      return user.posts;
+      
+    },
+    getReplies: async (parent, { _id }) => {
+      const postReplies = await Post.findById(_id).populate('replies');
+      return postReplies.replies;
+    }
   },
   Mutation: {
     register: async (parent, { name, email, password }) => {
@@ -42,19 +51,31 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    createPost: async (parent, { postBody, name }) => {
-      const post = await Post.create({ postBody, name });
-      return post;
+    createPost: async (parent, { postBody, name }, context) => {
+      if(context.user) {
+        const post = await Post.create({ postBody, name });
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          {$push: { posts: post } },
+          { new: true }
+          );
+        return post;
+      } throw new AuthenticationError("You need to be logged in!");
+      
     },
-    addReply: async (parent, { replyBody, name, _id }) => {
-      const updatedPost = await Post.findOneAndUpdate(
+    addReply: async (parent, { replyBody, name, _id }, context) => {
+      if(context.user) {
+      const reply = await Reply.create({ replyBody, name });
+      await Post.findByIdAndUpdate(
         { _id: _id },
-        { $addToSet: { replies: { replyBody, name } } },
-        { new: true, runValidators: true}
+        { $push: { replies: reply } },
+        { new: true }
       );
-      return updatedPost;
+      return reply;
+      } throw new AuthenticationError("You need to be logged in!");
     },
-    updatePost: async (parent, { postBody, _id, name }) => {
+    updatePost: async (parent, { postBody, _id, name }, context) => {
+      if(context.user) {
       const post = await Post.findOneAndUpdate(
         { _id: _id },
         { postBody, name },
@@ -62,37 +83,54 @@ const resolvers = {
       );
       console.log(post);
       return post;
+      } throw new AuthenticationError("You need to be logged in!");
     },
-    updateReply: async (parent, { replyBody, _id, name }) => {
-      const updatedReply = await Post.findOneAndUpdate(
+    updateReply: async (parent, { replyBody, _id, name }, context) => {
+      if(context.user) {
+      const reply = await Reply.findOneAndUpdate(
         { _id: _id },
-        { $pull: { replies: { replyBody, name } }},
+        { replyBody, name },
         { new: true }
       );
-      return updatedReply;
+      return reply;
+      } throw new AuthenticationError("You need to be logged in!");
     },
-    removePost: async (parent, { _id }) => {
+    removePost: async (parent, { _id }, context) => {
+      if(context.user) {
       const remove = await Post.findOneAndDelete(
         { _id: _id },
       );
       return remove;
+      } throw new AuthenticationError("You need to be logged in!");
     },
-    removeReply: async (parent, { replyId }) => {
-      const remove = await Post.findOneAndUpdate(
-        { _id: replyId },
-        { $pull: { replies: { replyId } } },
-        { new: true }
+    removeReply: async (parent, { _id }, context) => {
+      if(context.user) {
+      const remove = await Reply.findByIdAndDelete(
+        { _id: _id },
       );
       return remove;
+      } throw new AuthenticationError("You need to be logged in!");
     },
-    addFriend: async (parent, { _id }) => {
+    addFriend: async (parent, { _id }, context) => {
+      if(context.user) {
       const updatedUser = await User.findOneAndUpdate(
-        { _id: _id },
+        { _id: context.user._id },
         { $addToSet: { friends: _id } },
         { new: true, runValidators: true }
       );
       return updatedUser;
+      } throw new AuthenticationError("You need to be logged in!");
     },
+    removeFriend: async (parent, { _id }, context) => {
+      if(context.user) {
+      const updatedUser = await User.findOneAndUpdate(
+        { _id: context.user._id },
+        { $pull: { friends: _id } },
+        { new: true, runValidators: true }
+      );
+      return updatedUser;
+      } throw new AuthenticationError("You need to be logged in!");
+    }
   },
 };
 

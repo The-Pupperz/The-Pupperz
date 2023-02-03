@@ -3,12 +3,12 @@ import React from 'react'
 const Settings = () => {
     return ( 
 
-<div class="flex items-center justify-center p-12">
-  <div class="mx-auto w-full max-w-[550px]">
+<div class="bg-[#040F16] flex justify-center items-center h-screen py-12">
+  <div class="w-full max-w-[550px]">
  
         <div class="w-full sm:w-1/2">
           <div class="mb-5 text-4xl text-[#F79764]">
-            <label class="">
+            <label>
     
               Account Settings
             </label>

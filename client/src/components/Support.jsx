@@ -2,7 +2,7 @@ import React from 'react'
 
 const Support = () => {
     return (
-<div class="flex items-center justify-center p-12">
+<div class="bg-[#040F16] flex items-center justify-center h-screen p-12">
   <div class="mx-auto w-full max-w-[550px]">
     <form action="https://getform.io/f/07e3a107-6dc3-47d1-9663-d20ef83bc3ca" method="POST">
       <div class="mb-5">

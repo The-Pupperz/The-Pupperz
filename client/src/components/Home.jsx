@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Profile from './Profile'
 
 const Home = () => {
+const [showProfile, setShowProfile] = useState(false)
+const handleClick = () => {
+  setShowProfile(!showProfile)
+}
+
   return (
-    <div class="w-full flex flex-row flex-wrap">
+    <div class="w-full flex flex-row flex-wrap ">
 
 <div class="w-full bg-[#040F16] h-screen flex flex-row flex-wrap justify-center">
   
@@ -28,7 +34,8 @@ const Home = () => {
       <div class="bg-[#040F16] mt-3">
       <div class="bg-[#040F16] shadow p-3 text-3xl text-white font-semibold">
           {/* POST USERNAME */}
-          USERNAME
+          <div style={{cursor:"pointer"}} onClick={handleClick}>USERNAME</div>
+          {showProfile && <Profile />}
         </div>
         <div class="bg-[#040F16] border border-[#F79764] shadow p-5 text-xl text-white font-semibold">
           {/* POST BODY */}

@@ -5,7 +5,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Settings from './Settings.jsx';
 
 const navigation = [
-  { name: 'Puppers Home', href: '#', current: true },
+  { name: 'Puppers Home', href: '/home', current: true },
 
 ]
 
