@@ -100,17 +100,17 @@ export default function Landing() {
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
                 PUPPER
               </h1>
-              <p className="mt-6 text-lg leading-8 text-white">
+              <p className="mt-6 text-lg leading-8 text-white font-Comfortaa">
               Tired of Elon Musk owning twitter? Join us today. Deliver your thoughts politics free! 
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
                   href="#"
-                  className="rounded-md bg-[#A288E3] px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-[#F79764] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="font-Comfortaa rounded-md bg-[#A288E3] px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-[#F79764] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Log In
                 </a>
-                <a href="#" className="text-base font-semibold leading-7 text-white">
+                <a href="#" className="text-base font-semibold leading-7 text-white font-Comfortaa">
                   Sign Up <span aria-hidden="true">→</span>
                 </a>
               </div>
