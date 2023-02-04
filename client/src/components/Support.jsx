@@ -4,11 +4,11 @@ import { IoIosHelpCircleOutline } from 'react-icons/io';
 
 const Support = () => {
     return (
-<div class="bg-[#040F16] flex justify-center h-screen p-2">
+<div class="bg-[#040F16] flex justify-center h-screen p-4">
   <div class="mx-auto w-full max-w-[550px]">
-  <div class="text-4xl text-[#F79764] font-Comfortaa">
+  <div class="text-3xl text-[#F79764] font-Comfortaa">
             <label>
-              Get Support
+              Support
             </label>
             
             </div> 
@@ -34,7 +34,7 @@ const Support = () => {
           for="email"
           class="mb-3 block text-base font-medium py-4 text-[#F79764] font-Comfortaa"
         >
-          Email Address
+          Email
         </label>
         <input
           type="email"

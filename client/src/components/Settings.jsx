@@ -7,7 +7,7 @@ const Settings = () => {
   <div class="w-full max-w-[550px]">
  
         <div class="w-full sm:w-1/2">
-          <div class="mb-5 text-4xl text-[#F79764] font-Comfortaa">
+          <div class="mb-5 text-3xl text-[#F79764] font-Comfortaa">
             <label>
     
               Account Settings
