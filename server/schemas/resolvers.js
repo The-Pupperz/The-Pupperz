@@ -6,7 +6,7 @@ const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        return Profile.findOne({ _id: context.user._id });
+        return User.findOne({ _id: context.user._id });
       }
       throw new AuthenticationError("You need to be logged in!");
     },
@@ -16,7 +16,7 @@ const resolvers = {
       return post;
     },
     getPosts: async () => {
-      const posts = await Post.find({});
+      const posts = await Post.find({}).populate('replies').sort({ createdAt: -1 });
       return posts;
     },
     getUserPosts: async (parent, { _id }) => {
