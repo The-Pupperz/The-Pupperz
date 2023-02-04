@@ -1,10 +1,16 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-
+import { useMutation, useQuery } from '@apollo/client'
+import { ADD_FRIEND, REMOVE_FRIEND} from '../utils/mutations'
+import { QUERY_ME } from '../utils/queries'
 
 export default function Profile() {
   const [open, setOpen] = useState(true)
+  const [data:user]=useQuery(QUERY_ME)
+  const [addfriend,{data: addfriendData}] = useMutation(ADD_FRIEND)
+  const [removeFriend,{data: removeFriendData}] = useMutation(REMOVE_FRIEND)
+
   // const [friends, setFriends] = useState([
   //   {
   //     username: 'Friend 1',
