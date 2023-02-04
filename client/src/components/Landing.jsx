@@ -73,7 +73,7 @@ export default function Landing() {
                 </div>
                 <div className="py-6">
                   <a
-                    href="#"
+                    href="/Login"
                     className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10"
                   >
                     Log in
@@ -105,12 +105,15 @@ export default function Landing() {
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
+
                   href="#"
                   className="font-Comfortaa rounded-md bg-[#A288E3] px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-[#F79764] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Log In
                 </a>
-                <a href="#" className="text-base font-semibold leading-7 text-white font-Comfortaa">
+              
+                <a href="/Register" className="text-base font-semibold leading-7 text-white">
+
                   Sign Up <span aria-hidden="true">→</span>
                 </a>
               </div>
