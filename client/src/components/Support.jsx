@@ -4,9 +4,9 @@ import { IoIosHelpCircleOutline } from 'react-icons/io';
 
 const Support = () => {
     return (
-<div class="bg-[#040F16] flex items-center text-centerjustify-center h-screen p-12">
+<div class="bg-[#040F16] flex items-center justify-center h-screen p-12">
   <div class="mx-auto w-full max-w-[550px]">
-  <div class="mb-5 text-4xl text-center text-[#F79764]">
+  <div class="text-4xl text-[#F79764] font-Comfortaa">
             <label>
               Get Support
             </label>
@@ -17,7 +17,7 @@ const Support = () => {
       <div class="mb-5">
         <label
           for="name"
-          class="mb-3 block text-base font-medium py-4 text-[#F79764] "
+          class="mb-3 block text-base font-medium py-4 text-[#F79764] font-Comfortaa"
         >
           Username
         </label>
@@ -26,13 +26,13 @@ const Support = () => {
           name="name"
           id="name"
           placeholder="username"
-          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#F79764] outline-none focus:bg-[#A288E3] focus:shadow-md hover:translate-y-1  hover:placeholder-white"
+          class="hover:placeholder-white hover:bg-[#A288E3] w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
         />
       </div>
       <div class="mb-5">
         <label
           for="email"
-          class="mb-3 block text-base font-medium py-4 text-[#F79764]"
+          class="mb-3 block text-base font-medium py-4 text-[#F79764] font-Comfortaa"
         >
           Email Address
         </label>
@@ -41,13 +41,13 @@ const Support = () => {
           name="email"
           id="email"
           placeholder="example@domain.com"
-          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#F79764] outline-none focus:bg-[#A288E3] focus:shadow-md hover:translate-y-1  hover:placeholder-white"
+          class="hover:placeholder-white hover:bg-[#A288E3] w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
         />
       </div>
       <div class="mb-5">
         <label
           for="subject"
-          class="mb-3 block text-base font-medium py-4 text-[#F79764]"
+          class="mb-3 block text-base font-medium py-4 text-[#F79764] font-Comfortaa"
         >
           Subject
         </label>
@@ -56,13 +56,13 @@ const Support = () => {
           name="subject"
           id="subject"
           placeholder="Enter your subject"
-          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:bg-[#A288E3] focus:shadow-md hover:translate-y-1  hover:placeholder-white"
+          class="hover:placeholder-white hover:bg-[#A288E3] w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
         />
       </div>
       <div class="mb-5">
         <label
           for="message"
-          class="mb-3 block text-base font-medium py-4 text-[#F79764]"
+          class="mb-3 block text-base font-medium py-4 text-[#F79764] font-Comfortaa"
         >
           Message
         </label>
@@ -71,12 +71,12 @@ const Support = () => {
           name="message"
           id="message"
           placeholder="Type your message"
-          class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:bg-[#A288E3] focus:shadow-md hover:translate-y-1  hover:placeholder-white"
+          class="hover:placeholder-white hover:bg-[#A288E3] w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
         ></textarea>
       </div>
       <div class="flex items-center py-5 justify-center">
         <button
-          class="hover:shadow-form rounded-md flex space-between bg-[#A288E3] hover:bg-[#F79764] px-8 text-base font-semibold text-white outline-none py-3"
+          class="hover:shadow-form rounded-md flex space-between bg-[#A288E3] hover:bg-[#F79764] px-8 text-base font-semibold text-white outline-none py-3 font-Comfortaa"
         >
           <span class= "p-1"><IoIosHelpCircleOutline/> </span> Support
         </button>
