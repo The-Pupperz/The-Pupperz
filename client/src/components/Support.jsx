@@ -4,7 +4,7 @@ import { IoIosHelpCircleOutline } from 'react-icons/io';
 
 const Support = () => {
     return (
-<div class="bg-[#040F16] flex items-center justify-center h-screen p-12">
+<div class="bg-[#040F16] flex justify-center h-screen p-2">
   <div class="mx-auto w-full max-w-[550px]">
   <div class="text-4xl text-[#F79764] font-Comfortaa">
             <label>
