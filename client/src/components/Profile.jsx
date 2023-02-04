@@ -2,9 +2,20 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
+
 export default function Profile() {
   const [open, setOpen] = useState(true)
-
+  // const [friends, setFriends] = useState([
+  //   {
+  //     username: 'Friend 1',
+  //     bio: 'Bio 1'
+  //   },
+  //   {
+  //     username: 'Friend 2',
+  //     bio: 'Bio 2'
+  //   },
+  //   // add more friends here
+  // ]);
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
@@ -56,19 +67,45 @@ export default function Profile() {
                   {/* Profile Panel */}
                   <div className="flex h-full flex-col overflow-y-scroll bg-[#040F16] py-6 shadow-xl">
                     <div className="px-4 sm:px-6">
-                      <Dialog.Title className="text-2xl font-medium text-center text-white">
+                      <Dialog.Title className="font-Roboto Mono py-2 text-2xl font-thin text-center border-2 border-[#9c7bd181] text-white">
                         PROFILE
-                        </Dialog.Title>
+                      </Dialog.Title>
                     </div>
                     <div className="relative mt-6 flex-1 px-4 sm:px-6">
                       {/* Replace with your content */}
                       <div className="absolute inset-0 px-4 sm:px-6">
-                        <div className="h-full border-4 border-[#F79764]" aria-hidden="true">
-                        <div className='text-2xl font-medium text-white py-3 ml-5'>
-                          USERNAME
+                        <div className="h-full border-2 border-[#9c7bd181]" aria-hidden="true">
+                          <div className='font-Comfortaa text-xl font-medium  text-[#A288E3] py-3 ml-5'>
+                            USERNAME
                           </div>
-                          <div className='text-2xl font-medium text-white py-3 ml-5'>
-                          BIO
+                          <div className='font-Comfortaa text-xl font-medium  text-[#A288E3] py-3 ml-5'>
+                            BIO
+                          </div>
+                          <div>
+                            <h2 className="font-Comfortaa text-xl font-medium  text-[#A288E3] py-3 ml-5"> Friends </h2>
+                            <ul className='bg-[#8d8a8821] mx-2'>
+                              <li className="sidebarFriend flex items-center justify-between" >
+                                <span className="sidebarFriendName py-3 ml-9 border-width-2px border-[#A288E3] text-[#A288E3] font-Comfortaa hover:text-white hover:cursor-pointer"> User 1 </span>
+                                <span className='text-white'>
+                                  <button id="removeFriend" className='text-[#A288E3] font-Comfortaa mr-4 hover:bg-[#A288E3] hover:text-white gradient-[#A288E3]-[#FBFBFF] hover:cursor-pointer text-sm'>Remove </button>
+                                </span>
+                              </li>
+                              <li className="sidebarFriend flex items-center justify-between" >
+                                <span className="sidebarFriendName py-3 ml-9 border-width-2px border-[#A288E3] font-Comfortaa text-[#A288E3] hover:text-white hover:cursor-pointer"> User 2 </span>
+                                <span className='text-white'>
+                                  <button id="removeFriend" className='text-[#A288E3] font-Comfortaa mr-4 hover:bg-[#A288E3] hover:text-white gradient-[#A288E3]-[#FBFBFF] hover:cursor-pointer text-sm'>Remove </button>
+                                </span>
+                              </li>
+
+                            </ul>
+                            <div>
+                              <button id="addfriend"> </button>
+                            </div>
+                          </div>
+                          <div className='bg-#F79764 py-2 rounded-lg text-center border-1 bg-[hsla(20,66%,31%,5)] border-white hover:bg-[#A288E3] px-3 mx-5'>
+                            <button className='text-white hover:cursor-pointer hover:translate-y-1 hover:text-white px-3'>
+                              Add More Friends
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -81,6 +118,6 @@ export default function Profile() {
           </div>
         </div>
       </Dialog>
-    </Transition.Root>
+    </Transition.Root >
   )
 }
