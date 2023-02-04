@@ -7,7 +7,7 @@ const Settings = () => {
   <div class="w-full max-w-[550px]">
  
         <div class="w-full sm:w-1/2">
-          <div class="mb-5 text-4xl text-[#F79764]">
+          <div class="mb-5 text-3xl text-[#F79764] font-Comfortaa">
             <label>
     
               Account Settings
@@ -21,7 +21,7 @@ const Settings = () => {
           <div class="mb-5">
             <label
               for="fName"
-              class="py-3 mb-3 block text-base font-medium text-[#F79764]"
+              class="py-3 mb-3 block text-base font-medium text-[#F79764] font-Comfortaa"
             >
               Username
             </label>
@@ -38,7 +38,7 @@ const Settings = () => {
           <div class="mb-5">
             <label
               for="username"
-              class="py-3 mb-3 block text-base font-medium text-[#F79764]"
+              class="py-3 mb-3 block text-base font-medium text-[#F79764] font-Comfortaa"
             >
               Password
             </label>
@@ -59,7 +59,7 @@ const Settings = () => {
           <div class="mb-5">
             <label
               for="email"
-              class="py-3 mb-3 block text-base font-medium text-[#F79764]"
+              class="py-3 mb-3 block text-base font-medium text-[#F79764] font-Comfortaa"
             >
               Email
             </label>
@@ -76,7 +76,7 @@ const Settings = () => {
           <div class="mb-5">
             <label
               for="bio"
-              class="py-3 mb-3 block text-base font-medium text-[#F79764]"
+              class="py-3 mb-3 block text-base font-medium text-[#F79764] font-Comfortaa"
             >
               Bio
             </label>
@@ -92,7 +92,7 @@ const Settings = () => {
       </div>
 
       <div class="mb-5">
-        <label class="mb-3 block text-base font-medium text-[#F79764]">
+        <label class="mb-3 block text-base font-medium text-[#F79764] font-Comfortaa">
           Darkmode | Lightmode
         </label>
         <div class="flex items-center space-x-6">
@@ -105,7 +105,7 @@ const Settings = () => {
             />
             <label
               for="radioButton1"
-              class="pl-3 text-base font-medium text-[#F79764]"
+              class="pl-3 text-base font-medium text-[#F79764] font-Comfortaa"
             >
               Darkmode
             </label>
@@ -119,7 +119,7 @@ const Settings = () => {
             />
             <label
               for="radioButton2"
-              class="pl-3 text-base font-medium text-[#F79764]"
+              class="pl-3 text-base font-medium text-[#F79764] font-Comfortaa"
             >
               Lightmode
             </label>
