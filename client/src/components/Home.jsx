@@ -86,7 +86,7 @@ function Home() {
                 <div className="bg-[#040F16] rounded-md border-2 border-[#A288E3] shadow p-5 text-xl text-white font-Comfortaa">
                   {post.postBody}
                 </div>
-                <div className="bg-[#a288e393] p-1 border  shadow flex flex-row flex-wrap justify-around">
+                <div className="bg-[#a288e393] p-1 rounded-md shadow flex flex-row flex-wrap justify-around">
                   <div className="w-1/3 hover:bg-[#F79764] border-2  border-[#A288E3] text-center my-1 py2-3 text-l  text-white font-Comfortaa rounded-md bg-[#A288E3] hover:translate-y-1 cursor-pointer">
                     Like
                   </div>
