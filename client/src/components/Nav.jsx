@@ -4,6 +4,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import React, { useState } from 'react'
 
 import Avatar from './Avatar.jsx';
+import DarkMode from './DarkMode.js';
 
 const navigation = [
   { name: 'Puppers Home', href: '/home', current: true },
