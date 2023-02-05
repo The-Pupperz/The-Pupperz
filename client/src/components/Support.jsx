@@ -74,9 +74,9 @@ const Support = () => {
           class="hover:placeholder-white hover:bg-[#A288E3] w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
         ></textarea>
       </div>
-      <div class="flex items-center py-5 justify-center">
+      <div class="flex items-center justify-center">
         <button
-          class="hover:shadow-form rounded-md flex space-between bg-[#A288E3] hover:bg-[#F79764] px-8 text-base font-semibold text-white outline-none py-3 font-Comfortaa"
+          class="hover:shadow-form rounded-md flex space-between bg-[#A288E3] hover:bg-[#F79764] px-8 text-base font-semibold text-white outline-none py-2 font-Comfortaa"
         >
           <span class= "p-1"><IoIosHelpCircleOutline/> </span> Support
         </button>
