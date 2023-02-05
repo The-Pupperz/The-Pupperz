@@ -3,7 +3,7 @@ import React from 'react'
 const Settings = () => {
     return ( 
 
-<div class="bg-[#040F16] flex justify-center items-center h-screen py-12">
+<div class="bg-[#040F16] my-5 flex justify-center items-center h-screen py-12">
   <div class="w-full max-w-[550px]">
  
         <div class="w-full sm:w-1/2">
@@ -13,8 +13,8 @@ const Settings = () => {
               Account Settings
             </label>
             
-            </div> 
-            </div>  
+          </div> 
+        </div>  
     <form action="https://formbold.com/s/FORM_ID" method="POST">
       <div class="-mx-3 flex flex-wrap">
         <div class="w-full px-3 sm:w-1/2">

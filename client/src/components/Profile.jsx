@@ -2,26 +2,14 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { useMutation, useQuery } from '@apollo/client'
-import { ADD_FRIEND, REMOVE_FRIEND} from '../utils/mutations'
-import { QUERY_ME } from '../utils/queries'
+// import { ADD_FRIEND, REMOVE_FRIEND} from '../utils/mutations'
+// import { QUERY_ME } from '../utils/queries'
 
 export default function Profile() {
   const [open, setOpen] = useState(true)
-  const [data:user]=useQuery(QUERY_ME)
-  const [addfriend,{data: addfriendData}] = useMutation(ADD_FRIEND)
-  const [removeFriend,{data: removeFriendData}] = useMutation(REMOVE_FRIEND)
-
-  // const [friends, setFriends] = useState([
-  //   {
-  //     username: 'Friend 1',
-  //     bio: 'Bio 1'
-  //   },
-  //   {
-  //     username: 'Friend 2',
-  //     bio: 'Bio 2'
-  //   },
-  //   // add more friends here
-  // ]);
+  // const [data:user]=useQuery(QUERY_ME)
+  // const [addfriend,{data: addfriendData}] = useMutation(ADD_FRIEND)
+  // const [removeFriend,{data: removeFriendData}] = useMutation(REMOVE_FRIEND)
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
@@ -82,12 +70,12 @@ export default function Profile() {
                       <div className="absolute inset-0 px-4 sm:px-6">
                         <div className="h-full border-2 border-[#9c7bd181]" aria-hidden="true">
                           <div className='font-Comfortaa text-xl font-medium  text-[#A288E3] py-3 ml-5'>
-                            USERNAME
+                            Username
                           </div>
                           <div className='font-Comfortaa text-xl font-medium  text-[#A288E3] py-3 ml-5'>
-                            BIO
+                            Bio
                           </div>
-                          <div>
+                          <div >
                             <h2 className="font-Comfortaa text-xl font-medium  text-[#A288E3] py-3 ml-5"> Friends </h2>
                             <ul className='bg-[#8d8a8821] mx-2'>
                               <li className="sidebarFriend flex items-center justify-between" >
@@ -108,10 +96,14 @@ export default function Profile() {
                               <button id="addfriend"> </button>
                             </div>
                           </div>
-                          <div className='bg-#F79764 py-2 rounded-lg text-center border-1 bg-[hsla(20,66%,31%,5)] border-white hover:bg-[#A288E3] px-3 mx-5'>
-                            <button className='text-white hover:cursor-pointer hover:translate-y-1 hover:text-white px-3'>
+                        
+                          <div className='py-2 rounded-lg text-center border-1 border-white px-3 mx-5 justify-between'>
+                            <div className='bg-[hsla(20,66%,31%,5)] rounded-md text-center  py-2'>
+                              <button className='font-Comfortaa text-white hover:cursor-pointer hover:translate-y-1 hover:text-white'>
                               Add More Friends
-                            </button>
+                               </button>
+                            </div>
+                      
                           </div>
                         </div>
                       </div>
