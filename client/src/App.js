@@ -16,6 +16,7 @@ import Settings from './components/Settings';
 import Footer from './components/Footer';
 import Register from './components/Register';
 import Login from './components/Login';
+import UserPosts from "./components/userPosts";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -49,6 +50,7 @@ function App() {
             <Route path='/Settings' element={<Settings />} />
             <Route path='/Register' element={<Register />} />
             <Route path='/Login' element={<Login />} />
+            <Route path='/UserPosts' element={<UserPosts />} />
           </Routes>
             <Footer />
         </div>

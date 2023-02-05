@@ -28,6 +28,7 @@ function Register() {
         });
         console.log(data);
         Auth.login(data.register.token);
+        window.location.assign("/home");
       } catch (err) {
         console.error(err);
       }

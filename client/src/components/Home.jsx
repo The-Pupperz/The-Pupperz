@@ -4,16 +4,28 @@ import { useMutation, useQuery } from "@apollo/client";
 import { ADD_POST } from "../utils/mutations";
 import { QUERY_ME, QUERY_POSTS } from "../utils/queries";
 
+
+
 function Home() {
   const { data: user } = useQuery(QUERY_ME);
   const [addPost, { data: postData }] = useMutation(ADD_POST);
-  const { data: postsData } = useQuery(QUERY_POSTS);
+  const { data: postsData, loading } = useQuery(QUERY_POSTS);
   console.log(postsData);
   const posts = postsData?.getPosts || [];
 
-  const [showProfile, setShowProfile] = useState(false);
-  const handleClick = () => {
-    setShowProfile(!showProfile);
+  const [showProfile, setShowProfile] = useState({
+    posts: posts.map(post => ({
+      _id: post._id,
+      show: false
+    }))
+  });
+  const handleClick = (_id) => {
+    let posts = JSON.parse(JSON.stringify(showProfile.posts));
+    posts = posts.map(post => {
+      if(post._id === _id) {
+        post.show = !post.show;
+      }});
+    setShowProfile({ posts });
   };
 
   const [formState, setFormState] = useState({
@@ -39,7 +51,7 @@ function Home() {
       });
       setFormState({ postBody: "" });
       setPostSubmitted(true);
-      // window.location.reload();
+      window.location.reload();
       
     } catch (err) {
       console.error(err);
@@ -74,14 +86,14 @@ function Home() {
             </div>
           </form>
 
-          {posts.map((post) => (
+          {loading ? null : posts.map((post, i) => (
             <div className="mt-3 flex flex-col">
               <div className="bg-[#040F16] mt-3">
                 <div className="bg-[#040F16] shadow p-3 text-3xl text-white font-semibold">
-                  <div style={{ cursor: "pointer" }} onClick={handleClick}>
+                  <div>
                     {post.name}
                   </div>
-                  {showProfile && <Profile />}
+                  {/* {showProfile.posts[i].show && <Profile />} */}
                 </div>
                 <div className="bg-[#040F16] border border-[#F79764] shadow p-5 text-xl text-white font-semibold">
                   {post.postBody}
