@@ -59,7 +59,7 @@ export default function Nav() {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'border-double border-2 border-[#F79764] text-[#F79764]' : '',
+                          item.current ? 'font-Comfortaa border-double border-2 border-[#F79764] text-[#F79764]' : '',
                           'px-3 py-2 rounded-md text-big font-bold hover:text-lg'
                         )}
                         aria-current={item.current ? 'page' : undefined}
