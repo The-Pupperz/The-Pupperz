@@ -6,7 +6,7 @@ const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id });
+        return User.findOne({ _id: context.user._id }).populate("posts");
       }
       throw new AuthenticationError("You need to be logged in!");
     },
@@ -20,8 +20,10 @@ const resolvers = {
       return posts;
     },
     getUserPosts: async (parent, { _id }) => {
+      
       const user =  await User.findById(_id).populate('posts');
       return user.posts;
+      
       
     },
     getReplies: async (parent, { _id }) => {
@@ -74,11 +76,11 @@ const resolvers = {
       return reply;
       } throw new AuthenticationError("You need to be logged in!");
     },
-    updatePost: async (parent, { postBody, _id, name }, context) => {
+    updatePost: async (parent, { postBody, postId }, context) => {
       if(context.user) {
       const post = await Post.findOneAndUpdate(
-        { _id: _id },
-        { postBody, name },
+        { _id: postId },
+        { postBody },
         { new: true }
       );
       console.log(post);
@@ -95,10 +97,10 @@ const resolvers = {
       return reply;
       } throw new AuthenticationError("You need to be logged in!");
     },
-    removePost: async (parent, { _id }, context) => {
+    removePost: async (parent, { postId }, context) => {
       if(context.user) {
       const remove = await Post.findOneAndDelete(
-        { _id: _id },
+        { _id: postId },
       );
       return remove;
       } throw new AuthenticationError("You need to be logged in!");

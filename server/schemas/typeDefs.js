@@ -39,9 +39,9 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     createPost(postBody: String!, name: String!): Post 
     addReply(replyBody: String!, name: String!, _id: ID!): Reply
-    updatePost(postBody: String!, _id: ID!, name: String!): Post
+    updatePost(postBody: String!, postId: ID!): Post
     updateReply(replyBody: String!, _id: ID!, name: String!): Reply
-    removePost(_id: ID!): Post
+    removePost(postId: ID!): Post
     removeReply(_id: ID!): Reply
     addFriend(_id: ID!): User
     removeFriend(_id: ID!): User
