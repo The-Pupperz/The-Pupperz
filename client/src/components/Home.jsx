@@ -95,7 +95,7 @@ function Home() {
                   </div>
                 </div>
 
-                <div className=" heading bg-[#040F16] border-[#A288E3] rounded-b-lg shadow p-5 text-l text-white content-center font-semibold flex flex-row flex-wrap">
+                <div className=" heading bg-[#040F16] border-2 border-[#A288E3] rounded-b-lg shadow p-5 text-l text-white content-center flex flex-row flex-wrap rounded-md font-Comfortaa">
                   <div className="w-full">
                     <div className="w-full text-left text-2xl underline text-[#F79764] py-1">
                       {/* {post.replies.length} Comments */}
