@@ -4,6 +4,8 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import React, { useState } from 'react'
 
 import Avatar from './Avatar.jsx';
+import {IoIosSettings} from "react-icons/io";
+
 
 const navigation = [
   { name: 'Puppers Home', href: '/home', current: true },
@@ -94,8 +96,9 @@ export default function Nav() {
                         {({ active }) => (
                           <a 
                             href="/settings"
-                          className={classNames(active ? 'bg-[#F79764]': '', 'hover:bg-[#A288E3] block px-4 py-2 text-md text-white')}
+                          className={classNames(active ? 'bg-[#F79764]': '', 'hover:bg-[#A288E3] block px-4 py-2 text-md text-white items-center flex justify-between')}
                           >
+                            <span><IoIosSettings/></span>
                             Settings
                           </a>
                         )}
