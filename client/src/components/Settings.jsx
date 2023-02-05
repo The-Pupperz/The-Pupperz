@@ -3,8 +3,8 @@ import React from 'react'
 const Settings = () => {
     return ( 
 
-<div className="bg-[#040F16] flex justify-center items-center h-screen py-12">
-  <div className="w-full max-w-[550px]">
+<div class="bg-[#040F16] flex justify-center items-center h-screen py-12">
+  <div class="w-full max-w-[550px]">
  
         <div className="w-full sm:w-1/2">
           <div className="mb-5 text-3xl text-[#F79764] font-Comfortaa">
@@ -13,8 +13,8 @@ const Settings = () => {
               Account Settings
             </label>
             
-            </div> 
-            </div>  
+          </div> 
+        </div>  
     <form action="https://formbold.com/s/FORM_ID" method="POST">
       <div className="-mx-3 flex flex-wrap">
         <div className="w-full px-3 sm:w-1/2">
