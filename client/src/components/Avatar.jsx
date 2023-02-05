@@ -20,7 +20,7 @@ const Avatar = ({ item }) => {
     createSrc(item);
   }, [item]);
 
-  return <img src={src} alt={item} />;
+  return <img className="h-8 w-8 rounded-full" src={src} alt={item} />;
 };
 
 export default Avatar;

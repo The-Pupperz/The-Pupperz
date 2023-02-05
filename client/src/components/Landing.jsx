@@ -2,6 +2,10 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import {FaBone} from "react-icons/fa";
+import {FaPowerOff} from "react-icons/fa";
+import {FaPaw} from "react-icons/fa";
+
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -97,21 +101,32 @@ export default function Landing() {
               </div> */}
             </div>
             <div className="text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                PUPPER
+              <h1 className="text-4xl tracking-tight text-white sm:text-6xl .header font-extrabold ">
+                PUPPERS
               </h1>
-              <p className="mt-6 text-lg leading-8 text-white">
+              <h2 className="text-4xl text-[#A288E3] py-3 flex justify-center text-white sm:text-6xl"><FaBone/> </h2>
+              <p className="mt-6 text-lg leading-8 text-white font-Comfortaa">
               Tired of Elon Musk owning twitter? Join us today. Deliver your thoughts politics free! 
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
-                  href="/Login"
-                  className="rounded-md bg-[#A288E3] px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-[#F79764] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+
+                  href="#"
+                  className="font-Comfortaa rounded-md bg-[#A288E3] px-8 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-[#F79764] hover:translate-y-1"
                 >
-                  Log In
+                  <div className='flex items-center justify-between'>
+                   <span className=' mx-4 '> Log In </span> 
+                   <span className='left-3' ><FaPowerOff/></span>
+                  </div>
                 </a>
-                <a href="/Register" className="text-base font-semibold leading-7 text-white">
-                  Sign Up <span aria-hidden="true">→</span>
+              
+                <a href="/Register" className="font-Comfortaa rounded-md bg-[#A288E3] px-8 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-[#F79764] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+
+                  <div className='flex items-center justify-between'>
+                   <span className=' mx-4 '> Sign Up </span> 
+                   <span className='left-3' ><FaPaw/></span>
+                  </div>
+          
                 </a>
               </div>
             </div>
