@@ -65,7 +65,7 @@ function Home() {
                 <div className="w-2/3">
                   <button
                     type="Submit"
-                    className="float-right bg-[#A288E3] hover:bg-[#F79764] text-white p-2 rounded-lg"
+                    className="float-right bg-[#A288E3] hover:bg-[#F79764] text-white p-2 rounded-lg font-Comfortaa"
                   >
                     Submit
                   </button>
@@ -77,25 +77,25 @@ function Home() {
           {posts.map((post) => (
             <div className="mt-3 flex flex-col">
               <div className="bg-[#040F16] mt-3">
-                <div className="bg-[#040F16] shadow p-3 text-3xl text-white font-semibold">
+                <div className="bg-[#95553375] font- shadow p-3 text-3xl text-white font-semibold">
                   <div style={{ cursor: "pointer" }} onClick={handleClick}>
                     {post.name}
                   </div>
                   {showProfile && <Profile />}
                 </div>
-                <div className="bg-[#040F16] border border-[#F79764] shadow p-5 text-xl text-white font-semibold">
+                <div className="bg-[#040F16] border border-[#A288E3] shadow p-5 text-xl text-white font-semibold">
                   {post.postBody}
                 </div>
-                <div className="bg-[#A288E3] p-1 border border-[#F79764] shadow flex flex-row flex-wrap justify-center">
-                  <div className="w-1/3 hover:bg-[#F79764] border-4 text-center text-xl text-white font-semibold">
+                <div className="bg-[#a288e393] p-1 border  shadow flex flex-row flex-wrap justify-around">
+                  <div className="w-1/3 hover:bg-[#F79764] border-2  border-[#A288E3] text-center my-1 py2-3 text-l text-white font-Comfortaa rounded-md">
                     Like
                   </div>
-                  <div className="w-1/3 hover:bg-[#F79764] border-4 text-center text-xl text-white font-semibold">
+                  <div className="w-1/3 hover:bg-[#F79764] border-2 border-[#A288E3] text-center my-1 py2-3 text-l text-white font-Comfortaa rounded-md">
                     Comment
                   </div>
                 </div>
 
-                <div className="bg-[#040F16] border bg-[#040F16] border-[#F79764] rounded-b-lg shadow p-5 text-l text-white content-center font-semibold flex flex-row flex-wrap">
+                <div className="bg-[#040F16] border bg-[#040F16] border-[#A288E3] rounded-b-lg shadow p-5 text-l text-white content-center font-semibold flex flex-row flex-wrap">
                   <div className="w-full">
                     <div className="w-full text-left text-2xl underline text-[#F79764] py-1">
                       {/* {post.replies.length} Comments */}
