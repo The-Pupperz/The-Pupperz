@@ -6,6 +6,12 @@ export const QUERY_ME = gql`
       _id
       name
       email
+      posts {
+        _id
+        postBody
+        createdAt
+        name
+      }
     }
   }
 `;
@@ -43,8 +49,8 @@ export const QUERY_POST = gql`
 `;
 
 export const QUERY_USER_POSTS = gql`
-  query getUserPosts($_id: ID!) {
-    getUserPosts(_id: $_id) {
+  query getUserPosts($id: ID!) {
+    getUserPosts(_id: $id) {
       _id
       postBody
       createdAt

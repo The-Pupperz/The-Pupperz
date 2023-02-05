@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 const Reply = require('./Reply');
-const moment = require('moment');
+
 
 
 const postSchema = new Schema(
@@ -13,8 +13,8 @@ const postSchema = new Schema(
             maxlength: 280
         },
         createdAt: {
-            type: String,
-            default: moment().format('MMMM Do YYYY, h:mm:ss a')
+            type: Date,
+            default: Date.now,
 
         },
         name: {
@@ -36,6 +36,8 @@ const postSchema = new Schema(
     //     id: false
     // }
 );
+
+
 
 const Post = model('Post', postSchema);
 

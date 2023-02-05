@@ -48,8 +48,8 @@ export const ADD_REPLY = gql`
 `;
 
 export const UPDATE_POST = gql`
-  mutation updatePost($postBody: String!, $_id: ID!, $name: String!) {
-    updatePost(postBody: $postBody, _id: $_id, name: $name) {
+  mutation updatePost($postBody: String!, $postId: ID!) {
+    updatePost(postBody: $postBody, postId: $postId) {
       _id
       postBody
       createdAt
@@ -69,8 +69,8 @@ export const UPDATE_REPLY = gql`
 `;
 
 export const REMOVE_POST = gql`
-  mutation removePost($_id: ID!) {
-    removePost(_id: $_id) {
+  mutation removePost($postId: ID!) {
+    removePost(postId: $postId) {
       _id
       postBody
       createdAt
