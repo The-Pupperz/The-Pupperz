@@ -90,7 +90,7 @@ function Home() {
             <div className="mt-3 flex flex-col">
               <div className="bg-[#040F16] mt-3">
 
-                <div className="heading bg-[#040F16] rounded-md shadow p-3 text-3xl text-white font-semibold cusor:"pointer">
+                <div className="heading bg-[#040F16] rounded-md shadow p-3 text-3xl text-white font-semibold" >
                   <div >
       
                     {post.name}
