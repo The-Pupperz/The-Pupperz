@@ -44,6 +44,13 @@
 
 
 ## Screenshots:
+
+![portfolio screenshot](/client/src/assets/puppersscreen.png)
+![portfolio screenshot](/client/src/assets/puppersmobile.png)
+![portfolio screenshot](/client/src/assets/loginscreen.png)
+![portfolio screenshot](/client/src/assets/settingsscreen.png)
+![portfolio screenshot](/client/src/assets/supportscreen.png) 
+![portfolio screenshot](/client/src/assets/postscreen.png)
  
 
 ## Usage
