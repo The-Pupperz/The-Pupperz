@@ -9,7 +9,7 @@ import {IoIosSettings, IoIosHelpCircle, IoIosPower, IoIosPaper} from "react-icon
 
 
 const navigation = [
-  { name: 'Puppers Home', as: {Link}, current: true, to: '/home' },
+  { name: 'Puppers Home', to: '/home', current: true },
 
 ]
 
@@ -63,10 +63,10 @@ export default function Nav() {
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
-                        as={item.as}
                         to={item.to}
+                        as={Link}
                         className={classNames(
                           item.current ? 'font-Comfortaa border-double border-2 border-[#F79764] text-[#F79764]' : '',
                           'px-3 py-2 rounded-md text-big font-bold hover:text-lg'
@@ -74,7 +74,7 @@ export default function Nav() {
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -100,41 +100,42 @@ export default function Nav() {
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-[#F79764] py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
-                          <a 
-                            to="/settings"
+                          <Link 
+                            to ="/settings"
+                            
                           className={classNames(active ? 'bg-[#F79764]': '', 'hover:bg-[#A288E3] px-4 py-2 text-md text-white items-center flex justify-between')}
                           >
                             <span><IoIosSettings/></span>
                             Settings
-                          </a>
+                          </Link>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a 
+                          <Link 
                             to="/userPosts"
                           className={classNames(active ? 'bg-[#F79764]': '', 'hover:bg-[#A288E3] items-center px-4 py-2 text-md text-white flex justify-between')}
                           >
                             <span><IoIosPaper/></span>
                             Posts 
-                          </a>
+                          </Link>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a 
+                          <Link
                             to="/support"
                           className={classNames(active ? 'bg-[#F79764]': '', 'hover:bg-[#A288E3] items-center px-4 py-2 text-md text-white flex justify-between')}
                           >
                             <span><IoIosHelpCircle/></span>
                             Support
-                          </a>
+                          </Link>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            to="/"
+                            href="#"
                             onClick={logout}
                             className={classNames(active ? 'bg-gray-100' : '', 'hover:bg-[#A288E3]  block px-4 py-2 text-md text-white')}
                           >
@@ -155,7 +156,7 @@ export default function Nav() {
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
-                  as={item.as}
+                  as={Link}
                   to={item.to}
                   className={classNames(
                     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
