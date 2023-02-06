@@ -111,7 +111,7 @@ export default function Landing() {
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
 
-                  href="#"
+                  href="/Login"
                   className="font-Comfortaa rounded-md bg-[#A288E3] px-8 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-[#F79764] hover:translate-y-1"
                 >
                   <div className='flex items-center justify-between'>

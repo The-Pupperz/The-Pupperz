@@ -23,6 +23,11 @@ export default function Nav() {
   const handleClick = () => {
     setShowProfile(!showProfile)
   }
+
+  const logout = () => {
+    localStorage.removeItem('auth_token')
+    window.location.assign('/')
+  }
   
   return (
     <Disclosure as="nav" className="bg-[#a288e394]">
@@ -117,6 +122,7 @@ export default function Nav() {
                         {({ active }) => (
                           <a
                             href="#"
+                            onClick={logout}
                             className={classNames(active ? 'bg-gray-100' : '', 'hover:bg-[#A288E3]  block px-4 py-2 text-md text-white')}
                           >
                             Sign out
