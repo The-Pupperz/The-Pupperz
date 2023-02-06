@@ -117,7 +117,7 @@ export default function Nav() {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            href="/Login"
                             className={classNames(active ? 'bg-gray-100' : '', 'hover:bg-[#A288E3] flex items-center justify-between px-4 py-2 text-md text-white')}
                           >
                             <span><IoIosPower/></span>
