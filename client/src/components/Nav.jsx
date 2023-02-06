@@ -5,11 +5,11 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import Avatar from './Avatar.jsx';
-import {IoIosSettings, IoIosHelpCircle, IoIosPower, IoIosPaw } from "react-icons/io";
+import {IoIosSettings, IoIosHelpCircle, IoIosPower, IoIosPaper} from "react-icons/io";
 
 
 const navigation = [
-  { name: 'Puppers Home', href: '/home', current: true },
+  { name: 'Puppers Home', as: {Link}, current: true, to: '/home' },
 
 ]
 
@@ -65,7 +65,8 @@ export default function Nav() {
                     {navigation.map((item) => (
                       <a
                         key={item.name}
-                        href={item.href}
+                        as={item.as}
+                        to={item.to}
                         className={classNames(
                           item.current ? 'font-Comfortaa border-double border-2 border-[#F79764] text-[#F79764]' : '',
                           'px-3 py-2 rounded-md text-big font-bold hover:text-lg'
@@ -80,7 +81,6 @@ export default function Nav() {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
-                {/* Profile dropdown ----------------------------------------------------SET UP LOGIC FOR WHEN LOGGED IN AND LOGGED OUT-----------------------------------------------------------------------------------------------------*/}
                 <Menu as="div" className="relative ml-3">
                   <div>
                     <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -100,8 +100,8 @@ export default function Nav() {
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-[#F79764] py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
-                          <a as={Link} to ="/settings"
-                            href="/settings"
+                          <a 
+                            to="/settings"
                           className={classNames(active ? 'bg-[#F79764]': '', 'hover:bg-[#A288E3] px-4 py-2 text-md text-white items-center flex justify-between')}
                           >
                             <span><IoIosSettings/></span>
@@ -111,19 +111,19 @@ export default function Nav() {
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a as={Link} to ="/UserPosts"
-                            href="/UserPosts"
+                          <a 
+                            to="/userPosts"
                           className={classNames(active ? 'bg-[#F79764]': '', 'hover:bg-[#A288E3] items-center px-4 py-2 text-md text-white flex justify-between')}
                           >
-                            <span><IoIosPaw/></span>
-                            My Posts
+                            <span><IoIosPaper/></span>
+                            Posts 
                           </a>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a as={Link} to ="/support"
-                            href="/support"
+                          <a 
+                            to="/support"
                           className={classNames(active ? 'bg-[#F79764]': '', 'hover:bg-[#A288E3] items-center px-4 py-2 text-md text-white flex justify-between')}
                           >
                             <span><IoIosHelpCircle/></span>
@@ -134,7 +134,7 @@ export default function Nav() {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            to="/"
                             onClick={logout}
                             className={classNames(active ? 'bg-gray-100' : '', 'hover:bg-[#A288E3]  block px-4 py-2 text-md text-white')}
                           >
@@ -155,8 +155,8 @@ export default function Nav() {
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
-                  as="a"
-                  href={item.href}
+                  as={item.as}
+                  to={item.to}
                   className={classNames(
                     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                     'block px-3 py-2 rounded-md text-base font-medium'
