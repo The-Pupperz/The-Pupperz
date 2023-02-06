@@ -18,7 +18,7 @@ function UserPosts() {
 
   
   useEffect(() => {
-    console.log(user)
+    
     if (!Auth.loggedIn()) {
       alert("You must be logged in to view this page!")
       return navigate("/");
