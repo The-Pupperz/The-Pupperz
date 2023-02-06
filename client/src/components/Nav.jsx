@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import Avatar from './Avatar.jsx';
 import {IoIosSettings, IoIosHelpCircle, IoIosPower, IoIosPaw } from "react-icons/io";
@@ -99,7 +100,7 @@ export default function Nav() {
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-[#F79764] py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
-                          <a 
+                          <a as={Link} to ="/settings"
                             href="/settings"
                           className={classNames(active ? 'bg-[#F79764]': '', 'hover:bg-[#A288E3] px-4 py-2 text-md text-white items-center flex justify-between')}
                           >
@@ -110,7 +111,7 @@ export default function Nav() {
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a 
+                          <a as={Link} to ="/UserPosts"
                             href="/UserPosts"
                           className={classNames(active ? 'bg-[#F79764]': '', 'hover:bg-[#A288E3] items-center px-4 py-2 text-md text-white flex justify-between')}
                           >
@@ -121,7 +122,7 @@ export default function Nav() {
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a 
+                          <a as={Link} to ="/support"
                             href="/support"
                           className={classNames(active ? 'bg-[#F79764]': '', 'hover:bg-[#A288E3] items-center px-4 py-2 text-md text-white flex justify-between')}
                           >
