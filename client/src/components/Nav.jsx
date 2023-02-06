@@ -4,7 +4,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import React, { useState } from 'react'
 
 import Avatar from './Avatar.jsx';
-import {IoIosSettings, IoIosHelpCircle, IoIosPower} from "react-icons/io";
+import {IoIosSettings, IoIosHelpCircle, IoIosPower, IoIosPaper} from "react-icons/io";
 
 
 const navigation = [
@@ -74,7 +74,6 @@ export default function Nav() {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
-                {/* Profile dropdown ----------------------------------------------------SET UP LOGIC FOR WHEN LOGGED IN AND LOGGED OUT-----------------------------------------------------------------------------------------------------*/}
                 <Menu as="div" className="relative ml-3">
                   <div>
                     <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -100,6 +99,17 @@ export default function Nav() {
                           >
                             <span><IoIosSettings/></span>
                             Settings
+                          </a>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a 
+                            href="/userPosts"
+                          className={classNames(active ? 'bg-[#F79764]': '', 'hover:bg-[#A288E3] items-center px-4 py-2 text-md text-white flex justify-between')}
+                          >
+                            <span><IoIosPaper/></span>
+                            Posts 
                           </a>
                         )}
                       </Menu.Item>
