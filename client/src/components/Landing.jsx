@@ -104,7 +104,7 @@ export default function Landing() {
               <h1 className="text-4xl tracking-tight text-white sm:text-6xl .header font-extrabold ">
                 PUPPERS
               </h1>
-              <h2 className="text-4xl text-[#A288E3] py-3 flex justify-center text-white sm:text-6xl"><FaBone/> </h2>
+              <h2 className="text-4xl py-3 flex justify-center text-white sm:text-6xl"><FaBone/> </h2>
               <p className="mt-6 text-lg leading-8 text-white font-Comfortaa">
               Tired of Elon Musk owning twitter? Join us today. Deliver your thoughts politics free! 
               </p>

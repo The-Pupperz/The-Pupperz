@@ -115,10 +115,7 @@ function Home() {
                       {/* {post.replies.length} Comments */}
                       
                     </div>
-                    {/* COMMENTS? */}A Pretty Cool photo from the mountains.
-                    Image credit to @danielmirlea on Unsplash. A Pretty Cool
-                    photo from the mountains. Image credit to @danielmirlea on
-                    Unsplash.
+                    {/* COMMENTS? */} Wow Amaing! 
                   </div>
                 </div>
               </div>
