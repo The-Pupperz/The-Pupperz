@@ -4,7 +4,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import React, { useState } from 'react'
 
 import Avatar from './Avatar.jsx';
-import {IoIosSettings} from "react-icons/io";
+import {IoIosSettings, IoIosHelpCircle, IoIosPower} from "react-icons/io";
 
 
 const navigation = [
@@ -96,7 +96,7 @@ export default function Nav() {
                         {({ active }) => (
                           <a 
                             href="/settings"
-                          className={classNames(active ? 'bg-[#F79764]': '', 'hover:bg-[#A288E3] block px-4 py-2 text-md text-white items-center flex justify-between')}
+                          className={classNames(active ? 'bg-[#F79764]': '', 'hover:bg-[#A288E3] px-4 py-2 text-md text-white items-center flex justify-between')}
                           >
                             <span><IoIosSettings/></span>
                             Settings
@@ -107,8 +107,9 @@ export default function Nav() {
                         {({ active }) => (
                           <a 
                             href="/support"
-                          className={classNames(active ? 'bg-[#F79764]': '', 'hover:bg-[#A288E3] block px-4 py-2 text-md text-white')}
+                          className={classNames(active ? 'bg-[#F79764]': '', 'hover:bg-[#A288E3] items-center px-4 py-2 text-md text-white flex justify-between')}
                           >
+                            <span><IoIosHelpCircle/></span>
                             Support
                           </a>
                         )}
@@ -117,8 +118,9 @@ export default function Nav() {
                         {({ active }) => (
                           <a
                             href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'hover:bg-[#A288E3]  block px-4 py-2 text-md text-white')}
+                            className={classNames(active ? 'bg-gray-100' : '', 'hover:bg-[#A288E3] flex items-center justify-between px-4 py-2 text-md text-white')}
                           >
+                            <span><IoIosPower/></span>
                             Sign out
                           </a>
                         )}
