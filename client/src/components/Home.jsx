@@ -115,7 +115,7 @@ function Home() {
                       {/* {post.replies.length} Comments */}
                       
                     </div>
-                    {/* COMMENTS? */} Wow Amaing! 
+                    {/* COMMENTS? */} Wow Amazing! 
                   </div>
                 </div>
               </div>
