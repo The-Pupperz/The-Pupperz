@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { REGISTER_USER } from "../utils/mutations";
+import { useHistory } from "react-router-dom";
 import Auth from "../utils/auth";
 
 
@@ -23,12 +24,18 @@ function Register() {
       event.preventDefault();
   
       try {
-        const { data } = await register({
+        register({
           variables: { ...formState },
+        })
+        .then(({ data }) => {
+          console.log(data);
+          if (data && data.register && data.register.token) {
+            Auth.login(data.register.token);
+            history.push("/home");
+          } else {
+            console.error('Unexpected response from server:', data);
+          }
         });
-        console.log(data);
-        Auth.login(data.register.token);
-        window.location.assign("/home");
       } catch (err) {
         console.error(err);
       }

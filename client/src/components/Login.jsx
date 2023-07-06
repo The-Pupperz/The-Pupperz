@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
+import { useHistory } from "react-router-dom";
 import { LOGIN_USER } from "../utils/mutations";
 
 import Auth from "../utils/auth.js";
@@ -21,12 +22,16 @@ function Login() {
     event.preventDefault();
 
     try {
-      const { data } = await Login({
+      Login({
         variables: { ...formState },
+      }).then(({ data }) => {
+        if (data && data.login && data.login.token) {
+          Auth.login(data.login.token);
+          history.push("/home");
+        } else {
+          console.error('Unexpected response from server:', data);
+        }
       });
-
-      Auth.login(data.login.token);
-      window.location.assign("/home");
     } catch (err) {
       console.error(err);
     }
