@@ -70,7 +70,7 @@ function UserPosts() {
       setEditId("");
       setShowEdit(false);
       setPostSubmitted(true);
-      window.location.reload();
+      navigate("/userposts");
     } catch (err) {
       console.error(err);
     }
