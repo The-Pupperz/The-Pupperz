@@ -8,15 +8,15 @@ import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import './App.css';
-import Nav from './components/Nav';
-import Landing from './components/Landing';
-import Home from './components/Home';
-import Support from './components/Support';
-import Settings from './components/Settings';
-import Footer from './components/Footer';
-import Register from './components/Register';
-import Login from './components/Login';
-import UserPosts from "./components/userPosts";
+import Nav from './components/nav';
+import Landing from './components/landing';
+import Home from './components/home';
+import Support from './components/support';
+import Settings from './components/settings';
+import Footer from './components/footer';
+import Register from './components/register';
+import Login from './components/login';
+import UserPosts from "./components/UserPosts";
 
 const httpLink = createHttpLink({
   uri: "/graphql",

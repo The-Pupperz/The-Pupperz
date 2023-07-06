@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Profile from "./Profile";
+import profile from "./profile";
 import { useMutation, useQuery } from "@apollo/client";
 import { ADD_POST } from "../utils/mutations";
 import { QUERY_ME, QUERY_POSTS } from "../utils/queries";
