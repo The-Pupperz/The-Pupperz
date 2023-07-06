@@ -25,8 +25,15 @@ function UserPosts() {
     }
   }, []);
 
-  const [updatePost, { data: updateData }] = useMutation(UPDATE_POST);
-  const [removePost, { data: removeData }] = useMutation(REMOVE_POST);
+  const [updatePost, { data: updateData }] = useMutation(UPDATE_POST, {
+    refetchQueries: [{ query: QUERY_ME }],
+    awaitRefetchQueries: true,
+  });
+
+  const [removePost, { data: removeData }] = useMutation(REMOVE_POST, {
+    refetchQueries: [{ query: QUERY_ME }],
+    awaitRefetchQueries: true,
+  });
 
   const [postSubmitted, setPostSubmitted] = useState(false);
 
