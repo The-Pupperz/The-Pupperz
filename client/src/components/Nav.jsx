@@ -18,9 +18,10 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-const navigate = useNavigate();
+
 
 export default function Nav() {
+  const navigate = useNavigate();
   const [showProfile, setShowProfile] = useState(false)
   const handleClick = () => {
     setShowProfile(!showProfile)
