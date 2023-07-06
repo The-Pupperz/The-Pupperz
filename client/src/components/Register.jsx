@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { REGISTER_USER } from "../utils/mutations";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import Auth from "../utils/auth";
 
 
@@ -16,7 +16,7 @@ function Register() {
   
     const [register, { error, data }] = useMutation(REGISTER_USER);
 
-    const history = useHistory();
+    const navigate = useNavigate();
   
     const handleInputChange = ({ target: { name, value } }) => {
       setFormState({ ...formState, [name]: value });
@@ -33,7 +33,7 @@ function Register() {
           console.log(data);
           if (data && data.register && data.register.token) {
             Auth.login(data.register.token);
-            history.push("/home");
+            navigate("/home");
           } else {
             console.error('Unexpected response from server:', data);
           }

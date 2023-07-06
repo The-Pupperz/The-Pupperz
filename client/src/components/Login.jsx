@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { LOGIN_USER } from "../utils/mutations";
 
 import Auth from "../utils/auth.js";
@@ -14,7 +14,7 @@ function Login() {
 
   const [Login, { error, data }] = useMutation(LOGIN_USER);
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleInputChange = ({ target: { name, value } }) => {
     setFormState({ ...formState, [name]: value });
@@ -29,7 +29,7 @@ function Login() {
       }).then(({ data }) => {
         if (data && data.login && data.login.token) {
           Auth.login(data.login.token);
-          history.push("/home");
+          navigate("/home");
         } else {
           console.error('Unexpected response from server:', data);
         }
