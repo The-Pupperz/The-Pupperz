@@ -5,6 +5,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import {FaBone} from "react-icons/fa";
 import {FaPowerOff} from "react-icons/fa";
 import {FaPaw} from "react-icons/fa";
+import { Link } from 'react-router-dom'
 
 
 const navigation = [
@@ -49,10 +50,10 @@ export default function Landing() {
         <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
           <Dialog.Panel focus="true" className="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden">
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
+              <Link to="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
                 <img className="h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
-              </a>
+              </Link>
               <button
                 type="button"
                 className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -66,22 +67,22 @@ export default function Landing() {
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
                   {navigation.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
-                      href={item.href}
+                      to={item.href}
                       className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
                 <div className="py-6">
-                  <a
-                    href="/Login"
+                  <Link
+                    to="/login"
                     className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10"
                   >
                     Log in
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -109,25 +110,25 @@ export default function Landing() {
               Tired of Elon Musk owning twitter? Join us today. Deliver your thoughts politics free! 
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
-                <a
+                <Link
 
-                  href="/Login"
+                  to="/login"
                   className="font-Comfortaa rounded-md bg-[#A288E3] px-8 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-[#F79764] hover:translate-y-1"
                 >
                   <div className='flex items-center justify-between'>
                    <span className=' mx-4 '> Log In </span> 
                    <span className='left-3' ><FaPowerOff/></span>
                   </div>
-                </a>
+                </Link>
               
-                <a href="/Register" className="font-Comfortaa rounded-md bg-[#A288E3] px-8 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-[#F79764] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                <Link to="/register" className="font-Comfortaa rounded-md bg-[#A288E3] px-8 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-[#F79764] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
 
                   <div className='flex items-center justify-between'>
                    <span className=' mx-4 '> Sign Up </span> 
                    <span className='left-3' ><FaPaw/></span>
                   </div>
           
-                </a>
+                </Link>
               </div>
             </div>
           </div>
