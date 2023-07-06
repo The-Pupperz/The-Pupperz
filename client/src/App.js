@@ -16,7 +16,7 @@ import Settings from './components/Settings';
 import Footer from './components/Footer';
 import Register from './components/Register';
 import Login from './components/Login';
-import UserPosts from "./components/UserPosts";
+import UserPosts from "./components/userPosts";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
