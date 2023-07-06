@@ -3,6 +3,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import Avatar from './Avatar.jsx';
 import {IoIosSettings, IoIosHelpCircle, IoIosPower, IoIosPaper} from "react-icons/io";
@@ -17,7 +18,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-
+const navigate = useNavigate();
 
 export default function Nav() {
   const [showProfile, setShowProfile] = useState(false)
@@ -27,7 +28,7 @@ export default function Nav() {
 
   const logout = () => {
     localStorage.removeItem('auth_token')
-    window.location.assign('/')
+    navigate('/')
   }
   
   return (

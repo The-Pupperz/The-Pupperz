@@ -10,7 +10,12 @@ import { useNavigate } from "react-router-dom";
 function Home() {
   const { data: user } = useQuery(QUERY_ME);
   const navigate = useNavigate();
-  const [addPost, { data: postData }] = useMutation(ADD_POST);
+
+  const [addPost, { data: postData }] = useMutation(ADD_POST, {
+    refetchQueries: [{ query: QUERY_POSTS }],
+    awaitRefetchQueries: true,
+  });
+
   const { data: postsData, loading } = useQuery(QUERY_POSTS);
   console.log(postsData);
   const posts = postsData?.getPosts || [];
@@ -21,6 +26,7 @@ function Home() {
       show: false
     }))
   });
+
   const handleClick = (_id) => {
     let posts = JSON.parse(JSON.stringify(showProfile.posts));
     posts = posts.map(post => {
@@ -122,7 +128,7 @@ function Home() {
                       {/* {post.replies.length} Comments */}
                       
                     </div>
-                    {/* COMMENTS? */} Wow Amazing! 
+                    {/* COMMENTS? */} 
                   </div>
                 </div>
               </div>
