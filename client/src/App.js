@@ -45,12 +45,12 @@ function App() {
             <Nav />
           <Routes>
             <Route path='/' element={<Landing />} />
-            <Route path='/Home' element={<Home />} />
-            <Route path='/Support' element={<Support />} />
-            <Route path='/Settings' element={<Settings />} />
-            <Route path='/Register' element={<Register />} />
-            <Route path='/Login' element={<Login />} />
-            <Route path='/UserPosts' element={<UserPosts />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/support' element={<Support />} />
+            <Route path='/settings' element={<Settings />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/userposts' element={<UserPosts />} />
           </Routes>
             <Footer />
         </div>
