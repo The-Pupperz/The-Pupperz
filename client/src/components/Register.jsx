@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { REGISTER_USER } from "../utils/mutations";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import Auth from "../utils/auth";
 
 
@@ -31,7 +31,7 @@ function Register() {
           console.log(data);
           if (data && data.register && data.register.token) {
             Auth.login(data.register.token);
-            history.push("/home");
+            window.location.assign("/home");
           } else {
             console.error('Unexpected response from server:', data);
           }
