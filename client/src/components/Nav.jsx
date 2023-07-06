@@ -4,7 +4,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import Avatar from './avatar.jsx';
+import Avatar from './Avatar.jsx';
 import {IoIosSettings, IoIosHelpCircle, IoIosPower, IoIosPaper} from "react-icons/io";
 
 
