@@ -1,13 +1,15 @@
-import React, { useState } from "react";
-import profile from "./Profile";
+import React, { useState, useEffect } from "react";
+import Profile from "./Profile";
 import { useMutation, useQuery } from "@apollo/client";
 import { ADD_POST } from "../utils/mutations";
 import { QUERY_ME, QUERY_POSTS } from "../utils/queries";
+import { useNavigate } from "react-router-dom";
 
 
 
 function Home() {
   const { data: user } = useQuery(QUERY_ME);
+  const navigate = useNavigate();
   const [addPost, { data: postData }] = useMutation(ADD_POST);
   const { data: postsData, loading } = useQuery(QUERY_POSTS);
   console.log(postsData);
@@ -38,6 +40,13 @@ function Home() {
 
   const [postSubmitted, setPostSubmitted] = useState(false);
 
+  useEffect(() => {
+    if (postSubmitted) {
+      navigate('/home', { replace: true });
+      setPostSubmitted(false);
+    }
+  }, [postSubmitted, navigate]);
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -51,8 +60,6 @@ function Home() {
       });
       setFormState({ postBody: "" });
       setPostSubmitted(true);
-      window.location.reload();
-      
     } catch (err) {
       console.error(err);
     }
